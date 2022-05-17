@@ -1,3 +1,53 @@
+body{
+  background-color: gray;
+}
+
 table{
-  border: solid black;
+  background-color: darkgray;
+  margin: 5px;
+  padding: 5px;
+  border: 5px solid black;
+  border-collapse: collapse;
+}
+
+thead{
+  margin: 5px;
+  padding: 5px;
+  border: 5px solid black;
+}
+
+tbody{
+  margin: 5px;
+  padding: 5px;
+  border: 5px solid black;
+}
+
+tfoot{
+  margin: 5px;
+  padding: 5px;
+  border: 5px solid black;
+}
+
+tr:hover {background-color: gray;}
+
+/* From: https://css-tricks.com/simple-css-row-column-highlighting/
+ td, th {
+  position: relative;
+}
+td:hover::after,
+th:hover::after {
+  content: "";
+  position: absolute;
+  background-color: gray;
+  left: 0;
+  top: -5000px;
+  height: 10000px;
+  width: 100%;
+  z-index: -1;
+} */
+
+th{
+  margin: 5px;
+  padding: 10px;
+  border: 3px solid black;
 }
