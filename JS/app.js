@@ -42,11 +42,11 @@ let renderTableHead = function(){
 //Helper function - render table footer
 let renderTableFoot = function(){
 
-  let tableHead = document.createElement('thead');
-  tableElem.appendChild(tableHead);
+  let tableFoot = document.createElement('tfoot');
+  tableElem.appendChild(tableFoot);
 
   let row = document.createElement('tr');
-  tableHead.appendChild(row);
+  tableFoot.appendChild(row);
 
   let th = document.createElement('th');
   th.textContent = 'Time';
