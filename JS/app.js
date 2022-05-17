@@ -15,10 +15,10 @@ function randomCust(min,max){
 
 //Create math functions
 function sum(a,b){
-  return Math.ceil(a+b);
+  return Math.round(a+b);
 }
 function multiply(a,b){
-  return Math.ceil(a*b);
+  return Math.round(a*b);
 }
 
 let seattle = {
