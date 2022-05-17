@@ -59,7 +59,7 @@ let renderTableFoot = function(){
   }
 
   th = document.createElement('th');
-  th.textContent = 'Daily Location Total';
+  th.textContent = 'Grand Total';
   row.appendChild(th);
 };
 //Helper function - render all stores
