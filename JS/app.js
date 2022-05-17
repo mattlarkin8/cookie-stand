@@ -49,18 +49,18 @@ let renderTableFoot = function(){
   tableFoot.appendChild(row);
 
   let th = document.createElement('th');
-  th.textContent = 'Time';
+  th.textContent = 'Hourly Total';
   row.appendChild(th);
 
   for(let i=0;i<hours.length;i++){
-    let th = document.createElement('th');
-    th.textContent = hours[i];
-    row.appendChild(th);
+    let td = document.createElement('td');
+    td.textContent = 'totals';
+    row.appendChild(td);
   }
 
-  th = document.createElement('th');
-  th.textContent = 'Grand Total';
-  row.appendChild(th);
+  let td = document.createElement('td');
+  td.textContent = 'Grand Total';
+  row.appendChild(td);
 };
 //Helper function - render all stores
 function renderAllStores(){
@@ -117,14 +117,14 @@ Store.prototype.render = function(){
   row.appendChild(th);
 
   for(let i=0;i<this.cookies[0].length;i++){
-    let th = document.createElement('th');
-    th.textContent = this.cookies[0][i];
-    row.appendChild(th);
+    let td = document.createElement('td');
+    td.textContent = this.cookies[0][i];
+    row.appendChild(td);
   }
 
-  th = document.createElement('th');
-  th.textContent = this.cookies[1];
-  row.appendChild(th);
+  let td = document.createElement('td');
+  td.textContent = this.cookies[1];
+  row.appendChild(td);
 };
 
 //Instantiate Stores
