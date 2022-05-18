@@ -25,7 +25,7 @@ nav ul{
   justify-content: space-evenly;
 }
 
-li{
+#header li{
   margin-top: 40px;
 }
 
@@ -39,38 +39,82 @@ main{
   margin: auto;
 }
 
-h1{
-display: inline-flex;
-}
-
 #leftFish{
-  height: 200px;
-  width: 500px;
+  height: 150px;
+  width: 350px;
 }
 
 #rightFish{
-  height: 200px;
-  width: 500px;
+  height: 150px;
+  width: 350px;
 }
 
-h1 img{}
+h1{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px 0px;
+}
 
 h1 p{
-  justify-content: center;
+  margin: 15px;
+  display: flex;
+  align-items: center;
   color: #6d6875;
   font-size: 100px;
 }
 
 h2{
+  text-align: center;
+  color: #6d6875;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+section{
+display: flex;
+justify-content: space-evenly;
+}
+
+#hours{
+  display: flex;
+}
+
+#hoursImg{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#sales{
   margin-top: 50px;
   margin-bottom: 50px;
 }
 
-h2 p{
+#sales p{
   text-align: center;
   color: #6d6875;
   font-size: 70px;
   font-weight: 200;
+}
+
+#cutter{
+  height: 100px;
+  width: 100px;
+}
+
+#family{
+  height: 100px;
+  width: 100px;
+}
+
+#cookie{
+  height: 100px;
+  width: 100px;
+}
+
+#shirt{
+  height: 100px;
+  width: 100px;
 }
 
 footer{
