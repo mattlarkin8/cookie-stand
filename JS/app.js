@@ -79,6 +79,11 @@ function multiply(a,b){
   return Math.round(a*b);
 }
 
+// for(let i=0;i<hours.length;i++){
+//   let sum = 0;
+//   for(let j=0;j<stores.length;j++)
+// }
+
 //Constructor functions
 function Store(name,minCust,maxCust,avg){
   this.name = name;
