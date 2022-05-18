@@ -53,14 +53,14 @@ let renderTableFoot = function(){
   row.appendChild(th);
 
   for(let i=0;i<hours.length;i++){
-    let td = document.createElement('td');
-    td.textContent = 'totals';
-    row.appendChild(td);
+    let th = document.createElement('th');
+    th.textContent = 'totals';
+    row.appendChild(th);
   }
 
-  let td = document.createElement('td');
-  td.textContent = 'Grand Total';
-  row.appendChild(td);
+  th = document.createElement('th');
+  th.textContent = 'Grand Total';
+  row.appendChild(th);
 };
 //Helper function - render all stores
 function renderAllStores(){
