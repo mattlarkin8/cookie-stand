@@ -40,14 +40,23 @@ main{
 }
 
 h1{
-
+display: inline-flex;
 }
 
-h1 img{
-  float: left;
+#leftFish{
+  height: 200px;
+  width: 500px;
 }
+
+#rightFish{
+  height: 200px;
+  width: 500px;
+}
+
+h1 img{}
 
 h1 p{
+  justify-content: center;
   color: #6d6875;
   font-size: 100px;
 }
@@ -69,6 +78,14 @@ footer{
   margin: auto;
   background-color: #6d6875;
   height: 30px;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+footer p{
+  padding-left: 10px;
 }
 
 /* Table styling */
