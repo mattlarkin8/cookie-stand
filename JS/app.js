@@ -6,6 +6,7 @@ let stores = [];
 
 //Access DOM
 let tableSection = document.getElementById('table');
+let formTable = document.getElementById('formTable');
 
 //Random number generation - got from mdn docs
 function randomCust(min,max){
@@ -61,7 +62,10 @@ let renderTableFoot = function(){
   th = document.createElement('th');
   th.textContent = 'Grand Total';
   row.appendChild(th);
+
+  return tableFoot;
 };
+
 //Helper function - render all stores
 function renderAllStores(){
   for(let i=0;i<stores.length;i++){
@@ -95,7 +99,7 @@ function Store(name,minCust,maxCust,avg){
   stores.push(this);
 }
 
-//Prototypes
+//Prototype Functions
 Store.prototype.getCust = function(){
   for(let i=0;i<hours.length;i++){
     this.cust.push(randomCust(this.minCust,this.maxCust));
@@ -132,6 +136,23 @@ Store.prototype.render = function(){
   row.appendChild(td);
 };
 
+function handleSubmit(event){
+  event.preventDefault();
+
+  let storeName = event.target.name.value;
+  let minCust = parseInt(event.target.minCust.value);
+  let maxCust = parseInt(event.target.maxCust.value);
+  let avg = parseInt(event.target.avg.value);
+
+  let newStore = new Store(storeName,minCust,maxCust,avg);
+
+  newStore.getCust();
+  newStore.calcCookies();
+  newStore.render();
+
+  formTable.reset();
+}
+
 //Instantiate Stores
 new Store('Seattle',23,65,6.3);
 new Store('Tokyo',3,24,1.2);
@@ -142,3 +163,5 @@ new Store('Lima',2,16,4.6);
 renderTableHead();
 renderAllStores();
 renderTableFoot();
+
+formTable.addEventListener('submit',handleSubmit);
