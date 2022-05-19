@@ -90,12 +90,11 @@ justify-content: space-evenly;
 }
 
 #hours ul{
-  text-align: center;
   color: #6d6875;
 }
 
 #hours li{
-  text-align: justify;
+  text-align: center;
   padding: 5px 40px;
   font-size: 20px;
 }
@@ -158,8 +157,15 @@ h3{
   font-weight: 50;
 }
 
-#about{
-  border: solid;
+#about h2{
+  padding-bottom: 10px;
+
+}
+
+#about p{
+  width: 700px;
+  font-size: 20px;
+  color: #6d6875;
 }
 
 #family{
