@@ -1,42 +1,253 @@
 body{
-  background-color: gray;
+  background-color: #e5989b;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+
+header{
+  background-color: #6d6875;
+  height: 120px;
+}
+
+nav{
+  width: 100%;
+  margin: auto;
+}
+
+nav img{
+  margin: 10px;
+  float: left;
+  height: 100px;
+  width: 100px;
+}
+
+nav ul{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#header li{
+  margin-top: 40px;
+}
+
+nav a{
+  text-decoration: none;
+  color: #b5838d;
+  font-size: 50px;
+}
+
+main{
+  margin: auto;
+}
+
+#leftFish{
+  height: 150px;
+  width: 350px;
+}
+
+#rightFish{
+  height: 150px;
+  width: 350px;
+}
+
+h1{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 25px 0px;
+}
+
+h1 p{
+  margin: 15px;
+  display: flex;
+  align-items: center;
+  color: #6d6875;
+  font-size: 100px;
+}
+
+h2{
+  text-align: center;
+  color: #6d6875;
+  font-size: 40px;
+  font-weight: 200;
+}
+
+#section1{
+margin: 80px 5px 100px 5px;
+display: flex;
+justify-content: space-evenly;
+}
+
+#cutter{
+  padding-right: 10px;
+  padding-top: 20px;
+  height: 250px;
+  width: 250px;
+}
+
+#hours h2{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#hours ul{
+  color: #6d6875;
+}
+
+#hours li{
+  text-align: center;
+  padding: 5px 40px;
+  font-size: 20px;
+}
+
+#merch h2{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#merch p{
+  width: 800px;
+  font-size: 30px;
+  color: #6d6875;
+}
+
+a{
+  text-decoration: none;
+  color: #ffcdb2;
+}
+
+#shirt{
+  height: 250px;
+  width: 250px;
+  float: left;
+  padding-right: 10px;
+}
+
+#section2{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#cookie{
+  height: 250px;
+  width: 250px;
+}
+
+#contact h2{
+  padding-bottom: 10px;
+}
+
+#contact ul{
+  text-align: center;
+  color: #6d6875;
+}
+
+#contact li{
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+
+h3{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: #6d6875;
+  font-size: 25px;
+  font-weight: 50;
+}
+
+#about h2{
+  padding-bottom: 10px;
+
+}
+
+#about p{
+  width: 700px;
+  font-size: 20px;
+  color: #6d6875;
+}
+
+#family{
+  float: right;
+  height: 200px;
+  width: 350px;
+}
+
+footer{
+  width: 100%;
+  margin: auto;
+  background-color: #6d6875;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+footer p{
+  padding-left: 10px;
+}
+
+#sales{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#sales p{
+  text-align: center;
+  color: #6d6875;
+  font-size: 70px;
+  font-weight: 200;
+}
+
+#salesFooter{
+  width: 100%;
+  margin: auto;
+  background-color: #6d6875;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Table styling */
 table{
-  background-color: darkgray;
-  margin: 5px;
+  background-color: #6d6875;
+  margin: auto;
   padding: 5px;
-  border: 5px solid black;
+  border: 5px solid #ffcdb2;
   border-collapse: collapse;
 }
 
 thead{
   margin: 5px;
   padding: 5px;
-  border: 5px solid black;
+  border: 5px solid #ffcdb2;
 }
 
 tbody{
   margin: 5px;
   padding: 5px;
-  border: 5px solid black;
+  border: 5px solid #ffcdb2;
 }
 
 tfoot{
   margin: 5px;
   padding: 5px;
-  border: 5px solid black;
+  border: 5px solid #ffcdb2;
 }
 
 th{
   margin: 5px;
   padding: 10px;
-  border: 3px solid black;
+  border: 5px solid #ffcdb2;
+  color: #ffb4a2;
 }
 
 td{
   text-align: center;
   margin: 5px;
   padding: 10px;
-  border: 3px solid black;
+  border: 3px solid #ffcdb2;
+  color: #ffb4a2;
 }
