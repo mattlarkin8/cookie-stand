@@ -3,6 +3,7 @@ body{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+
 header{
   background-color: #6d6875;
   height: 120px;
@@ -29,7 +30,7 @@ nav ul{
   margin-top: 40px;
 }
 
-a{
+nav a{
   text-decoration: none;
   color: #b5838d;
   font-size: 50px;
@@ -70,19 +71,114 @@ h2{
   font-weight: 200;
 }
 
-section{
+#section1{
+margin: 80px 5px 100px 5px;
 display: flex;
 justify-content: space-evenly;
 }
 
-#hours{
-  display: flex;
+#cutter{
+  padding-right: 10px;
+  padding-top: 20px;
+  height: 250px;
+  width: 250px;
 }
 
-#hoursImg{
+#hours h2{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#hours ul{
+  text-align: center;
+  color: #6d6875;
+}
+
+#hours li{
+  text-align: justify;
+  padding: 5px 40px;
+  font-size: 20px;
+}
+
+#merch h2{
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#merch p{
+  width: 800px;
+  font-size: 30px;
+  color: #6d6875;
+}
+
+a{
+  text-decoration: none;
+  color: #ffcdb2;
+}
+
+#shirt{
+  height: 250px;
+  width: 250px;
+  float: left;
+  padding-right: 10px;
+}
+
+#section2{
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#cookie{
+  height: 250px;
+  width: 250px;
+}
+
+#contact h2{
+  padding-bottom: 10px;
+}
+
+#contact ul{
+  text-align: center;
+  color: #6d6875;
+}
+
+#contact li{
+  text-align: center;
+  padding: 5px 20px;
+  font-size: 20px;
+}
+
+h3{
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  color: #6d6875;
+  font-size: 25px;
+  font-weight: 50;
+}
+
+#about{
+  border: solid;
+}
+
+#family{
+  float: right;
+  height: 200px;
+  width: 350px;
+}
+
+footer{
+  width: 100%;
+  margin: auto;
+  background-color: #6d6875;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+footer p{
+  padding-left: 10px;
 }
 
 #sales{
@@ -97,39 +193,15 @@ justify-content: space-evenly;
   font-weight: 200;
 }
 
-#cutter{
-  height: 100px;
-  width: 100px;
-}
-
-#family{
-  height: 100px;
-  width: 100px;
-}
-
-#cookie{
-  height: 100px;
-  width: 100px;
-}
-
-#shirt{
-  height: 100px;
-  width: 100px;
-}
-
-footer{
+#salesFooter{
   width: 100%;
   margin: auto;
   background-color: #6d6875;
   height: 30px;
-  position: absolute;
-  bottom: 0;
   display: flex;
   align-items: center;
-}
-
-footer p{
-  padding-left: 10px;
+  position: absolute;
+  bottom: 0;
 }
 
 /* Table styling */
