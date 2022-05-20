@@ -6,6 +6,7 @@ let stores = [];
 
 //Access DOM
 let tableSection = document.getElementById('table');
+let formTable = document.getElementById('formTable');
 
 //Random number generation - got from mdn docs
 function randomCust(min,max){
@@ -17,7 +18,7 @@ let tableElem = document.createElement('table');
 tableSection.appendChild(tableElem);
 let tableBody = document.createElement('tbody');
 tableElem.appendChild(tableBody);
-let renderTableHead = function(){
+function renderTableHead(){
 
   let tableHead = document.createElement('thead');
   tableElem.appendChild(tableHead);
@@ -38,11 +39,12 @@ let renderTableHead = function(){
   th = document.createElement('th');
   th.textContent = 'Daily Location Total';
   row.appendChild(th);
-};
+}
 //Helper function - render table footer
-let renderTableFoot = function(){
+function renderTableFoot(){
 
   let tableFoot = document.createElement('tfoot');
+  tableFoot.setAttribute('id','tableFoot');
   tableElem.appendChild(tableFoot);
 
   let row = document.createElement('tr');
@@ -52,16 +54,17 @@ let renderTableFoot = function(){
   th.textContent = 'Hourly Total';
   row.appendChild(th);
 
-  for(let i=0;i<hours.length;i++){
+  for(let i=0;i<cookieTotal[0].length;i++){
     let th = document.createElement('th');
-    th.textContent = 'totals';
+    th.textContent = `${cookieTotal[0][i]}`;
     row.appendChild(th);
   }
 
   th = document.createElement('th');
-  th.textContent = 'Grand Total';
+  th.textContent = `${cookieTotal[1]}`;
   row.appendChild(th);
-};
+}
+
 //Helper function - render all stores
 function renderAllStores(){
   for(let i=0;i<stores.length;i++){
@@ -69,6 +72,7 @@ function renderAllStores(){
     stores[i].calcCookies();
     stores[i].render();
   }
+  totalCookies();
 }
 
 //Create math functions
@@ -78,11 +82,22 @@ function sum(a,b){
 function multiply(a,b){
   return Math.round(a*b);
 }
-
-// for(let i=0;i<hours.length;i++){
-//   let sum = 0;
-//   for(let j=0;j<stores.length;j++)
-// }
+//Calculate hourly totals and grand total
+let cookieTotal = [[],[]];
+function totalCookies(){
+  for(let i=0;i<hours.length;i++){
+    let total = 0;
+    for(let j=0;j<stores.length;j++){
+      total += stores[j].cookies[0][i];
+    }
+    cookieTotal[0].push(total);
+  }
+  let total = 0;
+  for(let i=0;i<cookieTotal[0].length;i++){
+    total += cookieTotal[0][i];
+  }
+  cookieTotal[1].push(total);
+}
 
 //Constructor functions
 function Store(name,minCust,maxCust,avg){
@@ -95,7 +110,7 @@ function Store(name,minCust,maxCust,avg){
   stores.push(this);
 }
 
-//Prototypes
+//Prototype Functions
 Store.prototype.getCust = function(){
   for(let i=0;i<hours.length;i++){
     this.cust.push(randomCust(this.minCust,this.maxCust));
@@ -111,6 +126,26 @@ Store.prototype.calcCookies = function(){
     total = sum(total,this.cookies[0][i]);
   }
   this.cookies[1].push(total);
+};
+
+Store.prototype.totalCookies = function(){
+  for(let i=0;i<hours.length;i++){
+    let total = 0;
+    for(let j=0;j<stores.length;j++){
+      total += stores[j].cookies[0][i];
+    }
+    cookieTotal[0].push(total);
+  }
+  let total = 0;
+  for(let i=0;i<cookieTotal[0].length;i++){
+    total += cookieTotal[0][i];
+  }
+  cookieTotal[1].push(total);
+};
+
+Store.prototype.removeFoot = function(){
+  let tableFoot = document.getElementById('tableFoot');
+  tableFoot.remove();
 };
 
 Store.prototype.render = function(){
@@ -142,3 +177,24 @@ new Store('Lima',2,16,4.6);
 renderTableHead();
 renderAllStores();
 renderTableFoot();
+
+
+function handleSubmit(event){
+  event.preventDefault();
+
+  let storeName = event.target.name.value;
+  let minCust = parseInt(event.target.minCust.value);
+  let maxCust = parseInt(event.target.maxCust.value);
+  let avg = parseInt(event.target.avg.value);
+
+  let newStore = new Store(storeName,minCust,maxCust,avg);
+
+  newStore.getCust();
+  newStore.calcCookies();
+  newStore.totalCookies();
+  newStore.render();
+  //newStore.removeFoot();
+  formTable.reset();
+}
+
+formTable.addEventListener('submit',handleSubmit);

@@ -3,7 +3,7 @@ body{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
+/* Header */
 header{
   background-color: #6d6875;
   height: 120px;
@@ -40,6 +40,7 @@ main{
   margin: auto;
 }
 
+/* Main page H1 */
 #leftFish{
   height: 150px;
   width: 350px;
@@ -71,6 +72,7 @@ h2{
   font-weight: 200;
 }
 
+/* First flex section - Hours and Merch*/
 #section1{
 margin: 80px 5px 100px 5px;
 display: flex;
@@ -122,6 +124,7 @@ a{
   padding-right: 10px;
 }
 
+/* Second flex section - Contact and About Us*/
 #section2{
   display: flex;
   justify-content: space-around;
@@ -174,6 +177,7 @@ h3{
   width: 350px;
 }
 
+/* Footer */
 footer{
   width: 100%;
   margin: auto;
@@ -187,6 +191,7 @@ footer p{
   padding-left: 10px;
 }
 
+/* Sales page specific styling */
 #sales{
   margin-top: 50px;
   margin-bottom: 50px;
@@ -250,4 +255,47 @@ td{
   padding: 10px;
   border: 3px solid #ffcdb2;
   color: #ffb4a2;
+}
+
+/* Form */
+form{
+  margin: 40px auto;
+  background-color: #6d6875;
+  border: solid #ffcdb2;
+  width: 1500px;
+}
+
+fieldset{
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+legend{
+  font-size: 50px;
+  text-align: center;
+  padding-bottom: 10px;
+  color: #e5989b;
+}
+
+label{
+  color:#ffcdb2
+}
+
+input{
+  font-size: 15px;
+}
+
+button{
+  width: 70px;
+  height: 30px;
+  font-size: 15px;
+  color: #6d6875;
+  margin: 5px auto;
+  display: block;
+}
+
+button:hover{
+  background-color:#e5989b;
+  transition: 350ms;
 }
