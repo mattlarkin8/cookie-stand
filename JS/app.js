@@ -53,14 +53,14 @@ let renderTableFoot = function(){
   th.textContent = 'Hourly Total';
   row.appendChild(th);
 
-  for(let i=0;i<hours.length;i++){
+  for(let i=0;i<cookieTotal[0].length;i++){
     let th = document.createElement('th');
-    th.textContent = 'totals';
+    th.textContent = `${cookieTotal[0][i]}`;
     row.appendChild(th);
   }
 
   th = document.createElement('th');
-  th.textContent = 'Grand Total';
+  th.textContent = `${cookieTotal[1]}`;
   row.appendChild(th);
 
   return tableFoot;
@@ -73,6 +73,7 @@ function renderAllStores(){
     stores[i].calcCookies();
     stores[i].render();
   }
+  totalCookies();
 }
 
 //Create math functions
@@ -82,11 +83,22 @@ function sum(a,b){
 function multiply(a,b){
   return Math.round(a*b);
 }
-
-// for(let i=0;i<hours.length;i++){
-//   let sum = 0;
-//   for(let j=0;j<stores.length;j++)
-// }
+//Calculate hourly totals and grand total
+let cookieTotal = [[],[]];
+function totalCookies(){
+  for(let i=0;i<hours.length;i++){
+    let total = 0;
+    for(let j=0;j<stores.length;j++){
+      total += stores[j].cookies[0][i];
+    }
+    cookieTotal[0].push(total);
+  }
+  let total = 0;
+  for(let i=0;i<cookieTotal[0].length;i++){
+    total += cookieTotal[0][i];
+  }
+  cookieTotal[1].push(total);
+}
 
 //Constructor functions
 function Store(name,minCust,maxCust,avg){
@@ -115,6 +127,21 @@ Store.prototype.calcCookies = function(){
     total = sum(total,this.cookies[0][i]);
   }
   this.cookies[1].push(total);
+};
+
+Store.prototype.totalCookies = function(){
+  for(let i=0;i<hours.length;i++){
+    let total = 0;
+    for(let j=0;j<stores.length;j++){
+      total += stores[j].cookies[0][i];
+    }
+    cookieTotal[0].push(total);
+  }
+  let total = 0;
+  for(let i=0;i<cookieTotal[0].length;i++){
+    total += cookieTotal[0][i];
+  }
+  cookieTotal[1].push(total);
 };
 
 Store.prototype.render = function(){
@@ -149,6 +176,7 @@ function handleSubmit(event){
   newStore.getCust();
   newStore.calcCookies();
   newStore.render();
+  newStore.totalCookies();
 
   formTable.reset();
 }
