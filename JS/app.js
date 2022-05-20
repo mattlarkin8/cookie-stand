@@ -18,7 +18,7 @@ let tableElem = document.createElement('table');
 tableSection.appendChild(tableElem);
 let tableBody = document.createElement('tbody');
 tableElem.appendChild(tableBody);
-let renderTableHead = function(){
+function renderTableHead(){
 
   let tableHead = document.createElement('thead');
   tableElem.appendChild(tableHead);
@@ -39,11 +39,12 @@ let renderTableHead = function(){
   th = document.createElement('th');
   th.textContent = 'Daily Location Total';
   row.appendChild(th);
-};
+}
 //Helper function - render table footer
-let renderTableFoot = function(){
+function renderTableFoot(){
 
   let tableFoot = document.createElement('tfoot');
+  tableFoot.setAttribute('id','tableFoot');
   tableElem.appendChild(tableFoot);
 
   let row = document.createElement('tr');
@@ -62,9 +63,7 @@ let renderTableFoot = function(){
   th = document.createElement('th');
   th.textContent = `${cookieTotal[1]}`;
   row.appendChild(th);
-
-  return tableFoot;
-};
+}
 
 //Helper function - render all stores
 function renderAllStores(){
@@ -144,6 +143,11 @@ Store.prototype.totalCookies = function(){
   cookieTotal[1].push(total);
 };
 
+Store.prototype.removeFoot = function(){
+  let tableFoot = document.getElementById('tableFoot');
+  tableFoot.remove();
+};
+
 Store.prototype.render = function(){
   let row = document.createElement('tr');
   tableBody.appendChild(row);
@@ -163,6 +167,18 @@ Store.prototype.render = function(){
   row.appendChild(td);
 };
 
+//Instantiate Stores
+new Store('Seattle',23,65,6.3);
+new Store('Tokyo',3,24,1.2);
+new Store('Dubai',11,38,3.7);
+new Store('Paris',20,38,2.3);
+new Store('Lima',2,16,4.6);
+
+renderTableHead();
+renderAllStores();
+renderTableFoot();
+
+
 function handleSubmit(event){
   event.preventDefault();
 
@@ -175,21 +191,10 @@ function handleSubmit(event){
 
   newStore.getCust();
   newStore.calcCookies();
-  newStore.render();
   newStore.totalCookies();
-
+  newStore.render();
+  //newStore.removeFoot();
   formTable.reset();
 }
-
-//Instantiate Stores
-new Store('Seattle',23,65,6.3);
-new Store('Tokyo',3,24,1.2);
-new Store('Dubai',11,38,3.7);
-new Store('Paris',20,38,2.3);
-new Store('Lima',2,16,4.6);
-
-renderTableHead();
-renderAllStores();
-renderTableFoot();
 
 formTable.addEventListener('submit',handleSubmit);
