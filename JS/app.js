@@ -44,7 +44,6 @@ function renderTableHead(){
 function renderTableFoot(){
 
   let tableFoot = document.createElement('tfoot');
-  tableFoot.setAttribute('id','tableFoot');
   tableElem.appendChild(tableFoot);
 
   let row = document.createElement('tr');
@@ -143,11 +142,6 @@ Store.prototype.totalCookies = function(){
   cookieTotal[1].push(total);
 };
 
-Store.prototype.removeFoot = function(){
-  let tableFoot = document.getElementById('tableFoot');
-  tableFoot.remove();
-};
-
 Store.prototype.render = function(){
   let row = document.createElement('tr');
   tableBody.appendChild(row);
@@ -189,11 +183,14 @@ function handleSubmit(event){
 
   let newStore = new Store(storeName,minCust,maxCust,avg);
 
+  document.querySelector('tfoot').remove();
+  cookieTotal = [[],[]];
   newStore.getCust();
   newStore.calcCookies();
   newStore.totalCookies();
   newStore.render();
-  //newStore.removeFoot();
+  renderTableFoot();
+
   formTable.reset();
 }
 
